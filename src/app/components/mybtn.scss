@@ -1,0 +1,19 @@
+.mybtn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border: 1px solid;
+  width: 14rem;
+  position: relative;
+}
+.mybtn {
+  transition: background-color 0.3s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+}
+.mybtn:hover {
+  transform: translateX(5px);
+}

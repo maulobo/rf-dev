@@ -1,0 +1,30 @@
+@import "./globals.scss";
+
+.full-body-container {
+  background-color: $color-font-dark;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.home-main-container {
+  scroll-snap-align: start;
+  padding: $padding;
+}
+
+.unidades-container {
+  scroll-snap-align: start;
+  height: 100vh;
+  color: $color-font-silver;
+}
+.unidades-section {
+  padding: $padding;
+  height: 100%;
+  display: flex;
+  width: 60%;
+  gap: $gap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}

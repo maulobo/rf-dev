@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+$text-font: 1em;
+$color-font-dark: black;
+$color-font-silver: rgb(138, 138, 138);
+$color-font-white: rgb(255, 255, 255);
+$padding: 8%;
+$gap: 3rem;
+$title: 4rem;
+$background: rgb(67, 62, 62);
+$font-p-size: 20px;
+
+h2 {
+  font-size: $title;
+  font-weight: bold;
+}
