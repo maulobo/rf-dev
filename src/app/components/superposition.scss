@@ -24,7 +24,7 @@
 .superposition-box1 {
   position: sticky;
   top: 0;
-  background-color: $color-font-silver;
+  background-image: url("/images/fondoSilverSelect.jpg");
 }
 
 .superposition-box2 {
@@ -35,10 +35,12 @@
 }
 
 .superposition-box3 {
-  background-color: rgb(128, 187, 250);
+  background-color: $background-skyblue;
   position: sticky;
   top: 10vh;
 }
+
+// aca va el footer ------------------------------------------------------------------
 .superposition-box4 {
   scroll-snap-align: start;
   background-color: rgb(0, 0, 0);
@@ -49,10 +51,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3em;
   color: white;
-  font-weight: bold;
 }
+
+// petroleo ----------------------------------------------------------------
 .petroleo-container {
   height: 100%;
   display: flex;
@@ -63,8 +65,9 @@
   text-align: right;
   margin-left: auto;
   align-items: flex-end;
-  background-color: $color-font-silver;
 }
+
+// metalurgica ----------------------------------------------------------------
 .metalurgica-container {
   height: 100%;
   width: 70%;
@@ -73,6 +76,9 @@
   justify-content: center;
   gap: $gap;
 }
+
+// hoteles ----------------------------------------------------------------
+
 .hoteles-container {
   height: 80%;
 }
@@ -92,4 +98,33 @@
   text-align: right;
   margin-left: auto;
   align-items: flex-end;
+}
+
+// mediaquery ----------------------------------------------------------------
+
+@media screen and (max-width: 575px) {
+  .hoteles-p {
+    display: none;
+  }
+  .hoteles-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .hoteles-section1 {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: $gap;
+  }
+  .hoteles-section2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    gap: $gap;
+    width: 70%;
+  }
 }

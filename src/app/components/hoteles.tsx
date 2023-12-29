@@ -8,8 +8,11 @@ const Hoteles = () => {
         <div>
           <h2>HOTEL CRYSTAL</h2>
         </div>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt
+        <p className="hoteles-p">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem amet
+          natus iusto voluptate incidunt ex quas nostrum obcaecati
+          reprehenderit. Rem dicta cumque velit suscipit debitis nobis nesciunt
+          molestiae reprehenderit quod.
         </p>
         <MyBtn text="MAS INFO" colorPasado="red" />
       </div>
@@ -17,9 +20,10 @@ const Hoteles = () => {
         <div>
           <h2>HOTEL IBERIA</h2>
         </div>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt
-          accusantium eaque
+        <p className="hoteles-p">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. At voluptate
+          possimus labore qui laborum iusto atque harum quam totam, nihil
+          expedita quia deserunt animi quod asperiores quo voluptas! Modi, ipsa?
         </p>
         <MyBtn text="MAS INFO" colorPasado="red" />
       </div>

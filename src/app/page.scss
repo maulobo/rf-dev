@@ -15,16 +15,17 @@
 
 .unidades-container {
   scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100vh;
   color: $color-font-silver;
 }
 .unidades-section {
   padding: $padding;
-  height: 100%;
   display: flex;
   width: 60%;
   gap: $gap;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
 }

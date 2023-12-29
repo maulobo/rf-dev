@@ -3,6 +3,8 @@ import "./superposition.scss";
 import Petroleo from "./petroleo";
 import Metalurgica from "./metalurgica";
 import Hoteles from "./hoteles";
+import Form from "./footer";
+import Footer from "./footer";
 
 const Superposition = () => {
   return (
@@ -18,7 +20,9 @@ const Superposition = () => {
           <div className="superposition-box superposition-box3">
             <Hoteles />
           </div>
-          <div className=" superposition-box4">4</div>
+          <div className=" superposition-box4">
+            <Footer />
+          </div>
         </div>
       </section>
     </div>

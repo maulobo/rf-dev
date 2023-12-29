@@ -1,8 +1,10 @@
 import React from "react";
+import HomeVisionMision from "./mision";
 
 const Unidades = () => {
   return (
     <div className="unidades-container">
+      <HomeVisionMision />
       <section className="unidades-section">
         <div>
           <h2>UNIDADES</h2>

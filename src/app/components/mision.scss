@@ -1,0 +1,93 @@
+@import "../globals.scss";
+.contenedor-mV {
+  height: $altoGenericoDiv;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .seccion-mision {
+    padding: 0 8%;
+    position: relative;
+    flex: 1;
+    height: 50%;
+    @include divCentrado;
+    cursor: pointer;
+    > h2 {
+      left: 8%;
+      position: absolute;
+      top: 35%;
+      transition: 900ms all ease-in-out;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0%;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background-color: #fff;
+    }
+    .p-mision {
+      transform: translateX(120%);
+      opacity: 0;
+      padding-top: 2rem;
+      transition: 900ms all ease-in-out;
+    }
+    &:hover {
+      .p-mision {
+        transform: translateX(0%);
+        opacity: 1;
+      }
+      h2 {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+    }
+  }
+  .seccion-vision {
+    padding: 0 8%;
+    position: relative;
+    flex: 1;
+    height: 50%;
+    cursor: pointer;
+    @include divCentrado;
+    > h2 {
+      right: 8%;
+      position: absolute;
+      top: 30%;
+      transition: 900ms all ease-in-out;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0%;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background-color: #fff;
+    }
+    .p-vision {
+      transform: translateX(-120%);
+      opacity: 0;
+      text-align: end;
+      padding-top: 2rem;
+
+      transition: 900ms all ease-in-out;
+    }
+    &:hover {
+      .p-vision {
+        transform: translateX(0%);
+        opacity: 1;
+      }
+      h2 {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+    }
+  }
+  hr {
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+  }
+}

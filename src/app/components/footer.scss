@@ -1,0 +1,67 @@
+@import "../globals.scss";
+
+.footer-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap;
+  align-items: center;
+  justify-content: space-around;
+}
+.form-container {
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+.footer-side-container {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+.footer-side-logo {
+  max-width: 250px;
+}
+.footer-side-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}
+
+.footer-side-icons-i {
+  font-size: x-large;
+  padding: 10px;
+  color: black;
+  background-color: white;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  .footer-container {
+    padding: $padding;
+    background-image: url("/images/rf.png");
+    background-size: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .footer-side-logo {
+    display: none;
+  }
+  .form-container {
+    align-items: center;
+  }
+
+  .form_form__T25IP {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+}
