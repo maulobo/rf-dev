@@ -5,116 +5,121 @@ import style from "./form.module.scss";
 import { sendContactForm } from "../lib/api";
 import "./footer.scss";
 
-export default function Form() {
-  const inicialForm = {
-    nombre: "",
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+}
+
+export default function Form(): JSX.Element {
+  const initialForm: FormData = {
+    name: "",
     email: "",
-    telefono: "",
-    mensaje: "",
+    phone: "",
+    message: "",
   };
 
-  const [datos, setDatos] = useState(inicialForm);
-  const [camposActivos, setCamposActivos] = useState([]);
-  const [errores, setErrores] = useState({});
-  const [enviando, setEnviando] = useState(false);
-  const [respuesta, setRespuesta] = useState(null);
-  const [formularioEnviado, setFormularioEnviado] = useState(false);
+  const [data, setData] = useState<FormData>(initialForm);
+  const [activeFields, setActiveFields] = useState<string[]>([]);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [sending, setSending] = useState<boolean>(false);
+  const [response, setResponse] = useState<string | null>(null);
+  const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
 
   useEffect(() => {
-    validarCamposActivos();
-  }, [datos, camposActivos]);
+    validateActiveFields();
+  }, [data, activeFields]);
 
-  const mensajes = {
-    requerido: "Este campo es obligatorio.",
-    email: "Correo electrónico inválido.",
-    minimo: "Este campo debe tener al menos 10 dígitos",
+  const messages = {
+    required: "This field is required.",
+    email: "Invalid email address.",
+    minimum: "This field must be at least 10 characters long",
   };
 
-  let reglasValidacion = Yup.object().shape({
-    nombre: Yup.string().required(mensajes.requerido),
-    mensaje: Yup.string().required(mensajes.requerido),
-    email: Yup.string().required(mensajes.requerido).email(mensajes.email),
-    telefono: Yup.string()
+  let validationSchema = Yup.object().shape({
+    name: Yup.string().required(messages.required),
+    message: Yup.string().required(messages.required),
+    email: Yup.string().required(messages.required).email(messages.email),
+    phone: Yup.string()
       .trim()
-      .transform((valor) => (valor === "" ? undefined : valor))
-      .required(mensajes.requerido)
-      .min(10, mensajes.minimo),
+      .transform((value) => (value === "" ? undefined : value))
+      .required(messages.required)
+      .min(10, messages.minimum),
   });
 
-  function permitirSoloNumeros(evento) {
-    if (evento.which < 48 || evento.which > 57) {
-      evento.preventDefault();
+  function allowOnlyNumbers(event: React.KeyboardEvent<HTMLInputElement>) {
+    if (event.which < 48 || event.which > 57) {
+      event.preventDefault();
     }
   }
 
-  function marcarComoActivo(evento) {
-    if (!camposActivos.includes(evento.target.name)) {
-      setCamposActivos([...camposActivos, evento.target.name]);
+  function markAsActive(event: React.ChangeEvent<HTMLInputElement>) {
+    if (!activeFields.includes(event.target.name)) {
+      setActiveFields([...activeFields, event.target.name]);
     }
   }
 
-  function actualizarDatos(evento) {
-    if (formularioEnviado) {
-      // Si el formulario fue enviado con éxito, no actualizamos el estado de los datos
+  function updateData(
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) {
+    if (formSubmitted) {
       return;
     }
 
-    setDatos({
-      ...datos,
-      [evento.target.name]: evento.target.value,
+    setData({
+      ...data,
+      [event.target.name]: event.target.value,
     });
   }
 
-  function validarCamposActivos() {
-    let errores = {};
+  function validateActiveFields() {
+    let validationErrors: Record<string, string> = {};
     try {
-      reglasValidacion.validateSync(datos, { abortEarly: false });
-      setErrores({});
-    } catch (erroresValidacion) {
-      erroresValidacion.inner.map((error) => {
-        errores[error.path] = error.message;
+      validationSchema.validateSync(data, { abortEarly: false });
+      setErrors({});
+    } catch (validationError) {
+      validationError.inner.map((error: Yup.ValidationError) => {
+        validationErrors[error.path] = error.message;
       });
-      const erroresCamposActivos = Object.keys(errores)
-        .filter((key) => {
-          return camposActivos.includes(key);
-        })
-        .reduce((acumulador, key) => {
-          if (!acumulador[key]) {
-            acumulador[key] = errores[key];
+      const activeFieldErrors = Object.keys(validationErrors)
+        .filter((key) => activeFields.includes(key))
+        .reduce((accumulator, key) => {
+          if (!accumulator[key]) {
+            accumulator[key] = validationErrors[key];
           }
-          return acumulador;
-        }, {});
-      setErrores(erroresCamposActivos);
+          return accumulator;
+        }, {} as Record<string, string>);
+      setErrors(activeFieldErrors);
     }
   }
 
-  function enviarFormulario(evento) {
-    evento.preventDefault();
-    let erroresFormulario = {};
+  function submitForm(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    let formErrors: Record<string, string> = {};
     try {
-      reglasValidacion.validateSync(datos, { abortEarly: false });
-      setErrores({});
-      setEnviando(true);
-      sendContactForm(datos)
-        .then((respuesta) => {
-          console.log(datos);
-          setEnviando(false);
-          setRespuesta("¡Formulario enviado con éxito!");
-          setDatos(inicialForm);
-          setErrores({}); // Limpiar los errores después de un envío exitoso
-          setFormularioEnviado(true); // Marcar el formulario como enviado con éxito
+      validationSchema.validateSync(data, { abortEarly: false });
+      setErrors({});
+      setSending(true);
+      sendContactForm(data)
+        .then(() => {
+          setSending(false);
+          setResponse("Form submitted successfully!");
+          setData(initialForm);
+          setErrors({});
+          setFormSubmitted(true);
         })
         .catch((error) => {
-          setEnviando(false);
+          setSending(false);
         });
-    } catch (erroresValidacion) {
-      setFormularioEnviado(false); // Marcar el formulario como no enviado con éxito
-      erroresValidacion.inner.map((error) => {
-        erroresFormulario[error.path] = error.message;
+    } catch (validationError) {
+      setFormSubmitted(false);
+      validationError.inner.map((error: Yup.ValidationError) => {
+        formErrors[error.path] = error.message;
       });
-      setErrores(erroresFormulario);
-      const camposActivos = Object.keys(erroresFormulario);
-      setCamposActivos(camposActivos);
+      setErrors(formErrors);
+      const activeFields = Object.keys(formErrors);
+      setActiveFields(activeFields);
     }
   }
 
