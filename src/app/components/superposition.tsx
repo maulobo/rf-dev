@@ -3,7 +3,6 @@ import "./superposition.scss";
 import Petroleo from "./petroleo";
 import Metalurgica from "./metalurgica";
 import Hoteles from "./hoteles";
-import Form from "./footer";
 import Footer from "./footer";
 
 const Superposition = () => {
