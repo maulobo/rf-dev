@@ -92,3 +92,10 @@
     background-color: #fff;
   }
 }
+@media screen and (max-width: 700px) {
+  .contenedor-mV {
+    h2 {
+      font-size: 2rem;
+    }
+  }
+}

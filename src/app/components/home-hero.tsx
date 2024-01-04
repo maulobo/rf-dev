@@ -8,7 +8,7 @@ const HomeHero = () => {
   return (
     <div className="home-hero-container">
       <div className="home-hero-first">
-        <Image src={logo} alt="logo" height={400} />
+        <Image src={logo} alt="logo" height={400} className="home-hero-img" />
         <Scroll />
       </div>
       <div className="home-hero-second">

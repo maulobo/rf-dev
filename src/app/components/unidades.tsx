@@ -6,7 +6,7 @@ const Unidades = () => {
     <div className="unidades-container">
       <HomeVisionMision />
       <section className="unidades-section">
-        <div>
+        <div className="unidades-title">
           <h2>UNIDADES</h2>
           <h2>DE NEGOCIO</h2>
         </div>
