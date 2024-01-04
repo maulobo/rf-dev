@@ -7,9 +7,7 @@
 .superposition-container {
   scroll-snap-type: y mandatory;
   scroll-snap-align: start;
-  min-height: 100vh;
-  min-height: fill-available;
-  min-height: -webkit-fill-available;
+  height: 100vh;
   position: relative;
   width: 100vw;
   overflow: scroll;
@@ -20,9 +18,7 @@
   scroll-snap-align: start;
   border-radius: 45px;
   width: 100%;
-  min-height: 100vh;
-  min-height: fill-available;
-  min-height: -webkit-fill-available;
+  height: 100vh;
   padding: $padding;
 }
 
@@ -52,9 +48,7 @@
   color: white;
   position: sticky;
   width: 100%;
-  min-height: 100vh;
-  min-height: fill-available;
-  min-height: -webkit-fill-available;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
