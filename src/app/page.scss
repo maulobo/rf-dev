@@ -4,7 +4,7 @@
   background-color: $color-font-dark;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  height: 100vh;
+  height: 100dvh;
   overflow: scroll;
   width: 100vw;
 }
@@ -19,7 +19,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  height: 100dvh;
   color: $color-font-silver;
 }
 .unidades-section {
