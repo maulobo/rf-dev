@@ -10,8 +10,9 @@
 * {
   box-sizing: border-box;
 }
-.main-body-container {
-  height: 100svh;
+body {
+  height: 100%;
+  position: relative;
 }
 
 $text-font: 1em;
@@ -35,9 +36,4 @@ $altoGenericoDiv: 30vh;
 h2 {
   font-size: $title;
   font-weight: bold;
-}
-
-html,
-body {
-  height: 100svh;
 }

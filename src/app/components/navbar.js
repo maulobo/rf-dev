@@ -15,7 +15,7 @@ export default function Menu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen}>
+    <Navbar onMenuOpenChange={setIsMenuOpen} style={{ position: "fixed" }}>
       <NavbarContent>
         <NavbarBrand>
           <p className="font-bold text-inherit">RF GROUP</p>
