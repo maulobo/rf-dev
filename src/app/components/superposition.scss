@@ -1,13 +1,13 @@
 @import "../globals.scss";
 
 .superposition-section {
-  height: 100vh;
+  height: 100svh;
 }
 
 .superposition-container {
   scroll-snap-type: y mandatory;
   scroll-snap-align: start;
-  height: 100vh;
+  height: 100svh;
   position: relative;
   width: 100vw;
   overflow: scroll;
