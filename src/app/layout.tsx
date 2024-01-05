@@ -17,8 +17,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body>
-        {/* <Menu /> */}
+      <body className="main-body-container">
+        <Menu />
         {children}
       </body>
     </html>
