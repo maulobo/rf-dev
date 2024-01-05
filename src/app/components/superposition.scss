@@ -1,7 +1,9 @@
 @import "../globals.scss";
 
 .superposition-section {
+  height: 100vh;
   height: 100svh;
+  position: relative;
 }
 
 .superposition-container {
