@@ -73,4 +73,16 @@
       font-size: 2.8rem;
     }
   }
+  .home-hero-container {
+    padding-top: 16%;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+    height: 100svh;
+    color: $color-font-silver;
+  }
+  .home-hero-second {
+    gap: 1rem;
+  }
 }

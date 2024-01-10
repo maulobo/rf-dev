@@ -38,3 +38,6 @@ h2 {
   font-size: $title;
   font-weight: bold;
 }
+@media screen and (max-width: 700px) {
+  $gap: 2rem;
+}
