@@ -14,7 +14,7 @@ const Hoteles = () => {
           reprehenderit. Rem dicta cumque velit suscipit debitis nobis nesciunt
           molestiae reprehenderit quod.
         </p>
-        <MyBtn text="MAS INFO" colorPasado="red" />
+        <MyBtn text="MAS INFO" colorPasado="black" />
       </div>
       <div className="hoteles-section2">
         <div>
@@ -25,7 +25,7 @@ const Hoteles = () => {
           possimus labore qui laborum iusto atque harum quam totam, nihil
           expedita quia deserunt animi quod asperiores quo voluptas! Modi, ipsa?
         </p>
-        <MyBtn text="MAS INFO" colorPasado="red" />
+        <MyBtn text="MAS INFO" colorPasado="black" />
       </div>
     </div>
   );

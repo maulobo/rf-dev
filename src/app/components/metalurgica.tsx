@@ -15,7 +15,7 @@ const Metalurgica = () => {
         nihil id soluta asperiores eligendi ad ut provident quae fuga nemo
         veniam eos labore pariatur consectetur blanditiis, laborum unde!
       </p>
-      <MyBtn text="MAS INFO" colorPasado="red" />
+      <MyBtn text="MAS INFO" colorPasado="antiquewhite" />
     </div>
   );
 };

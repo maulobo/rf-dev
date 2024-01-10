@@ -61,10 +61,11 @@ const Unidades = () => {
             once: true,
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam
-          obcaecati ad harum, maiores molestiae sed atque blanditiis amet minus
-          dolores vitae dolore? Tempora, quidem? Repellendus facere deleniti non
-          facilis at.
+          Nuestra empresa se destaca por su diversidad de unidades de negocio,
+          cada una especializada en su sector. Desde servicios tecnológicos
+          hasta soluciones creativas y más, nuestras diversas unidades de
+          negocio están dedicadas a satisfacer las necesidades variadas de
+          nuestros clientes con enfoque, experiencia y excelencia en cada área.
         </motion.p>
       </section>
     </div>

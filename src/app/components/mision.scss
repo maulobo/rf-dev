@@ -1,11 +1,10 @@
 @import "../globals.scss";
 .contenedor-mV {
-  overflow-x: hidden;
+  overflow: hidden;
   height: $altoGenericoDiv;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
   .seccion-mision {
     padding: 0 8%;
     position: relative;

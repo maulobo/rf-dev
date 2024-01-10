@@ -68,11 +68,7 @@
     height: 200px;
     width: 150px;
   }
-  .home-hero-second {
-    h1 {
-      font-size: 2.8rem;
-    }
-  }
+
   .home-hero-container {
     padding-top: 16%;
     scroll-snap-align: start;
@@ -82,7 +78,19 @@
     height: 100svh;
     color: $color-font-silver;
   }
+
   .home-hero-second {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     gap: 1rem;
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    align-items: center;
+    h1 {
+      font-size: 2.5rem;
+    }
   }
 }
