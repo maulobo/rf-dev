@@ -1,8 +1,33 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import logo from "/public/images/rf.png";
 import "./hero.scss";
 import Scroll from "./scroll";
+import { motion } from "framer-motion";
+
+const titleVariants = {
+  hidden: {
+    opacity: 0,
+    x: "100",
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { type: "spring", duration: 1, stiffness: 200 },
+  },
+};
+const pVariants = {
+  hidden: {
+    opacity: 0,
+    x: "100",
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { type: "spring", duration: 1, stiffness: 200, delay: 0.5 },
+  },
+};
 
 const HomeHero = () => {
   return (
@@ -12,16 +37,16 @@ const HomeHero = () => {
         <Scroll />
       </div>
       <div className="home-hero-second">
-        <div>
+        <motion.div variants={titleVariants} initial="hidden" animate="visible">
           <h1>SOBRE </h1>
           <h1>NOSOTROS</h1>
-        </div>
-        <p>
+        </motion.div>
+        <motion.p variants={pVariants} initial="hidden" animate="visible">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
           provident ut quasi mollitia veniam earum, quas, nostrum, aspernatur
           saepe sequi perferendis quod molestiae laboriosam! Minima earum ipsa
           dignissimos provident odio.
-        </p>
+        </motion.p>
       </div>
     </div>
   );
