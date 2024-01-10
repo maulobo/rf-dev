@@ -105,7 +105,7 @@
 
 // mediaquery ----------------------------------------------------------------
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 700px) {
   .hoteles-p {
     display: none;
   }
@@ -113,6 +113,8 @@
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
   .hoteles-section1 {
     width: 70%;
@@ -125,13 +127,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin-left: 0;
     gap: $gap;
     width: 70%;
+    text-align: left;
+    margin-left: 0;
+    align-items: flex-end;
   }
-}
-@media screen and (max-width: 700px) {
+
   $gap: 2rem;
   .superposition-section {
     h2 {
