@@ -15,15 +15,17 @@
 }
 
 .unidades-container {
+  padding-top: 8%;
+  padding: 0 8%;
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: $gap;
   height: 100svh;
   color: $color-font-silver;
 }
 .unidades-section {
-  padding: $padding;
   display: flex;
   width: 60%;
   gap: $gap;
@@ -38,10 +40,6 @@
     }
   }
   .unidades-section {
-    padding: $padding;
-    display: flex;
-    gap: $gap;
     width: 100%;
-    flex-direction: column;
   }
 }
